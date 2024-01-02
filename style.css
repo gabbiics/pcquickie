@@ -171,9 +171,6 @@ nav ul li a.active {
     cursor: pointer;
 }
 
-
-
-
 .product-info {
    display: none;
    position: absolute;
@@ -182,4 +179,95 @@ nav ul li a.active {
    border: 1px solid #ccc;
    border-radius: 5px;
    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #D9DDDC;
+    padding: 20px 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #34495E;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+ul li a {
+    color: #4B4B4B;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 600;
+}
+
+ul li a:hover {
+    color: #34495E;
+}
+
+.footer-bottom {
+    background-color: #34495E;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 500;
+}
+
+.combined-section {
+    flex: 1;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.combined-section h4 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons li a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
