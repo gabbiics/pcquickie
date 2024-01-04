@@ -86,6 +86,16 @@ body, html {
     /* End of Navigation Bar */
 
     /* Content */
+
+    .banner{
+        display: flex;
+        justify-content: center;
+    }
+
+    .banner img {
+        width: 70vw;
+    }
+
     .container {
         width: 80%;
         margin: 50px auto;
