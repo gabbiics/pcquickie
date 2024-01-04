@@ -1,5 +1,8 @@
 function setCookie(name, value) {
-    document.cookie = `${name}=${value}; expires=Thu, 01 Jan 2025 00:00:00 UTC; path=/`;
+    var date = new Date();
+    date.setTime(date.getTime()+(5*60*1000));
+    var expires = "; expires="+date.toGMTString();
+    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
 }
   
 function getCookie(name) {
