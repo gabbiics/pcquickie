@@ -87,13 +87,13 @@ body, html {
 
     /* Content */
 
+    .banner img {
+        width: 69vw;
+    }
+
     .banner{
         display: flex;
         justify-content: center;
-    }
-
-    .banner img {
-        width: 69vw;
     }
 
     .container {
