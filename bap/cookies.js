@@ -1,3 +1,4 @@
+const price = document.querySelector("#price");
 function setCookie(name, value) {
     var date = new Date();
     date.setTime(date.getTime()+(10*60*1000));

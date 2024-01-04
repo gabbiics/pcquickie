@@ -133,6 +133,9 @@
         </footer>
         </div>
     </section>
-    
+    <script>
+        let total = parseInt(getCookie("ssdPrice")) + parseInt(getCookie("totalPrice"));
+        setCookie("totalPrice", total);
+    </script>
 </body>
 </html>

@@ -134,5 +134,10 @@
 
     
     </div>
+    <script>
+        let total = parseInt(getCookie("ramPrice")) + parseInt(getCookie("totalPrice"));
+        setCookie("totalPrice", total);
+        price.textContent = "$" + getCookie("totalPrice");
+    </script>
 </body>
 </html>

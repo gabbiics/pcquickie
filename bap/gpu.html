@@ -161,5 +161,9 @@
 
     
     </div>
+    <script>
+        setCookie("totalPrice",getCookie("cpuPrice"));
+        price.textContent = "$" + getCookie("totalPrice");
+    </script>
 </body>
 </html>
