@@ -298,3 +298,15 @@ body, html {
     /* End of Footer */
 
 /* End of Homepage */
+
+/* Cart */
+    .noticeCart{
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        padding-top: 13vh;
+        padding-bottom: 13vh;
+        font-family: Lato;
+        font-size: 5vw;
+        color: #2a66a1;
+    }
