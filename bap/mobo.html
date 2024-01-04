@@ -14,6 +14,7 @@
 
 <body>
     <script src="cookies.js"></script>
+    
     <!-- Nav Bar -->
     <header class="main-header">
         <a href="../index.html"><img src="../Images/logo.png" alt="" class="logo"></a>
@@ -38,39 +39,67 @@
         
         <h2>MOBO</h2>
         <div class="image-container">
-            <div class="products">
+            <div class="products intel">
                 <a href="#" onclick='checkSocketIntel("Z690"); setCookie("moboPrice",129.99)'>
                     <img src="../Images/MOBO/ASRock Z690.png" alt="" class="bestSellingPics">
-                    <h3>ASRock Z690 Pro RS LGA 1700 Intel SATA 6Gb/s DDR4</h3>
+                    <h3>ASRock Z690 Pro RS LGA 1700 Intel SATA 6Gb/s DDR4 </h3>
                     <p><span class="crossedOut">$159.99</span> $129.99</p>
+                    <h4 class="notAvailableIntel"></h4>
                     <button type="button">ADD TO BUILD</button>
                 </a>    
             </div>
-            <div class="products">
+            <div class="products intel">
                 <a href="#" onclick='checkSocketIntel("Z790"); setCookie("moboPrice",143.99)'>
                     <img src="../Images/MOBO/GIGABYTE Z790 .png" alt="" class="bestSellingPics">
-                    <h3>GIGABYTE Z790 DDR4 LGA 1700 Intel Z790 ATX Motherboard with DDR4</h3>
+                    <h3>GIGABYTE Z790 DDR4 LGA 1700 Intel Z790 ATX Motherboard with DDR4 </h3>
                     <p><span class="crossedOut">$179.99</span> $143.99</p>
+                    <h4 class="notAvailableIntel"></h4>
                     <button type="button">ADD TO BUILD</button>
                 </a>    
             </div>
-            <div class="products">
+            <div class="products AM4">
                 <a href="#" onclick='checkSocketAMD("B450M"); setCookie("moboPrice",95.99)'>
                     <img src="../Images/MOBO/Asrock B450M Steel Legend.png" alt="" class="bestSellingPics">
-                    <h3>ASRock B450 Steel Legend AM4 AMD Motherboard</h3>
+                    <h3>ASRock B450 Steel Legend AM4 AMD Motherboard </h3>
                     <p><span class="crossedOut">$119.99</span> $95.99</p>
+                    <h4 class="notAvailableAM4"></h4>
                     <button type="button">ADD TO BUILD</button>
                 </a>    
             </div>
-            <div class="products">
+            <div class="products AM4">
                 <a href="#" onclick='checkSocketAMD("A320M-K"); setCookie("moboPrice",115.99)'>
                     <img src="../Images/MOBO/Asus Prime A320M-K.png" alt="" class="bestSellingPics">
-                    <h3>ASUS Prime A320M-K AMD Ryzen AM4 Micro-ATX A320</h3>
+                    <h3>ASUS Prime A320M-K AMD Ryzen AM4 Micro-ATX A320 </h3>
                     <p><span class="crossedOut">$144.99</span> $115.99</p>
+                    <h4 class="notAvailableAM4"></h4>
                     <button type="button">ADD TO BUILD</button>
                 </a>    
             </div>
         </div>
+        <script>
+            const notAvailableElementsAM4 = document.querySelectorAll(".notAvailableAM4");
+            const notAvailableElementsIntel = document.querySelectorAll(".notAvailableIntel")
+        
+            let sock = getCookie("cpuSocket");
+        
+            if (sock === "1700") {
+                notAvailableElementsAM4.forEach(notAvailableElement => {
+                    notAvailableElement.innerText = "This motherboard is not compatible with the CPU!";
+                });
+                notAvailableElementsIntel.forEach(notAvailableElement => {
+                    notAvailableElement.innerText = "This motherboard is compatible with the CPU!";
+                    notAvailableElement.style.color = "#3dc542"
+                });
+            } else {
+                notAvailableElementsAM4.forEach(notAvailableElement => {
+                    notAvailableElement.innerText = "This motherboard is compatible with the CPU!";
+                    notAvailableElement.style.color = "#3dc542"
+                });
+                notAvailableElementsIntel.forEach(notAvailableElement => {
+                    notAvailableElement.innerText = "This motherboard is not compatible with the CPU!";
+                });
+            }
+        </script>
             <!-- Footer -->
         <footer>
             <div class="footer-container">

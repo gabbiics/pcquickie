@@ -227,6 +227,18 @@ body, html {
         cursor: pointer;
     }
 
+    .notAvailableIntel,.notAvailableAM4 {
+        color: #ab5f5f;
+        font-family: Lato;
+        font-size: 1vw;
+        font-style: normal;
+        font-weight: 700;
+        text-align: center !important; 
+
+    }
+
+    
+
     /* End of Content */
 
 /* #region */
