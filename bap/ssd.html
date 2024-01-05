@@ -57,7 +57,7 @@
             <h2>SSD</h2>
             <div class="image-container">
                 <div class="products">
-                    <a href="mobo.html" onclick='setCookie("ssd","Samsung_1TB"); setCookie("ssdPrice",99.99)'>
+                    <a href="mobo.html" onclick='setCookie("ssd","Samsung_1TB"); addSsdPrice(99.99); setCookie("ssdPrice",99.99)'>
                         <img src="../Images/SSD/Samsung 870 EVO 1 TB.png" alt="" class="bestSellingPics">
                         <h3>Samsung 870 EVO 1TB SATA 2.5" Internal Solid State Drive (SSD)</h3>
                         <p><span class="crossedOut">$129.99</span> $99.99</p>
@@ -65,7 +65,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="mobo.html" onclick='setCookie("ssd","Kingston_1TB"); setCookie("ssdPrice",139.99)'>
+                    <a href="mobo.html" onclick='setCookie("ssd","Kingston_1TB"); addSsdPrice(139.99);  setCookie("ssdPrice",139.99)'>
                         <img src="../Images/SSD/Kingston KC3000 1TB.png" alt="" class="bestSellingPics">
                         <h3>Kingston KC3000 PCIe 4.0 NVMe M.2 Solid State Drive (SSD)</h3>
                         <p><span class="crossedOut">$174.99</span> $139.99</p>
@@ -73,7 +73,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="mobo.html" onclick='setCookie("ssd","Crucial_2TB"); setCookie("ssdPrice",149.99)'>
+                    <a href="mobo.html" onclick='setCookie("ssd","Crucial_2TB"); addSsdPrice(149.99); setCookie("ssdPrice",149.99)'>
                         <img src="../Images/SSD/Crucial P3 Plus 2 TB.png" alt="" class="bestSellingPics">
                         <h3>Crucial P3 Plus 2TB PCIe M.2 2280 Solid State Drive (SSD)</h3>
                         <p><span class="crossedOut">$189.99</span> $149.99</p>
@@ -81,7 +81,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="mobo.html" onclick='setCookie("ssd","Crucial_500GB"); setCookie("ssdPrice",47.99)'>
+                    <a href="mobo.html" onclick='setCookie("ssd","Crucial_500GB"); addSsdPrice(47.99); setCookie("ssdPrice",47.99)'>
                         <img src="../Images/SSD/Crucial P3 Plus 500 GB.png" alt="" class="bestSellingPics">
                         <h3>Crucial P3 Plus 500GB PCIe M.2 2280 Solid State Drive</h3>
                         <p><span class="crossedOut">$59.99</span> $47.99</p>
@@ -89,7 +89,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="mobo.html" onclick='setCookie("ssd","WD_256GB"); setCookie("ssdPrice",19.99)'>
+                    <a href="mobo.html" onclick='setCookie("ssd","WD_256GB"); addSsdPrice(19.99); setCookie("ssdPrice",19.99)'>
                         <img src="../Images/SSD/Western Digital SN740 256 GB.png" alt="" class="bestSellingPics">
                         <h3>Western Digital SN740 256GB 2230 M.2 Solid State Drive (SSD)</h3>
                         <p><span class="crossedOut">$24.99</span> $19.99</p>
@@ -135,9 +135,12 @@
     
     </div>
     <script>
-        let total = parseInt(getCookie("ramPrice")) + parseInt(getCookie("totalPrice"));
-        setCookie("totalPrice", total);
+
+        let sP = getCookie("ssdPriceStored");
+        const price = document.querySelector("#price");
         price.textContent = "$" + getCookie("totalPrice");
+        console.log(sP)
+        if (sP!=0) {console.log(true)} else {console.log(false)}
     </script>
 </body>
 </html>

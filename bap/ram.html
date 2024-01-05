@@ -58,7 +58,7 @@
             <h2>RAM</h2>
             <div class="image-container">
                 <div class="products">
-                    <a href="ssd.html" onclick='setCookie("ram","AORUS"); setCookie("ramPrice",109.99)'>
+                    <a href="ssd.html" onclick='setCookie("ram","AORUS"); addRamPrice(109.99);  setCookie("ramPrice",109.99)'>
                         <img src="../Images/RAM/AORUS DDR4-4800 RGB 16GB.png" alt="" class="bestSellingPics">
                         <h3>GIGABYTE AORUS DDR4-4800 RGB 16GB 4800MHz</h3>
                         <p><span class="crossedOut">$139.99</span> $109.99</p>
@@ -66,7 +66,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ssd.html" onclick='setCookie("ram","LPX_32GB"); setCookie("ramPrice",55.99)'>
+                    <a href="ssd.html" onclick='setCookie("ram","LPX_32GB"); addRamPrice(55.99);  setCookie("ramPrice",55.99)'>
                         <img src="../Images/RAM/VENGEANCE® LPX 32 GB.png" alt="" class="bestSellingPics">
                         <h3>Corsair VENGEANCE® LPX 32 GB 2666MHz</h3>
                         <p><span class="crossedOut">$69.99</span> $55.99</p>
@@ -74,7 +74,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ssd.html" onclick='setCookie("ram","RGB_16GB"); setCookie("ramPrice",59.99)'>
+                    <a href="ssd.html" onclick='setCookie("ram","RGB_16GB"); addRamPrice(59.99);  setCookie("ramPrice",59.99)'>
                         <img src="../Images/RAM/VENGEANCE® RGB RT 16GB.png" alt="" class="bestSellingPics">
                         <h3>Corsair VENGEANCE® RGB RT 16GB 3200MHz</h3>
                         <p><span class="crossedOut">$74.99</span> $59.99</p>
@@ -82,7 +82,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ssd.html" onclick='setCookie("ram","RGB_32GB"); setCookie("ramPrice",99.99)'>
+                    <a href="ssd.html" onclick='setCookie("ram","RGB_32GB"); addRamPrice(99.99); setCookie("ramPrice",99.99)'>
                         <img src="../Images/RAM/VENGEANCE® RGB RT 32GB.png" alt="" class="bestSellingPics">
                         <h3>Corsair VENGEANCE® RGB RT 32GB 3200MHz</h3>
                         <p><span class="crossedOut">$124.99</span> $99.99</p>
@@ -128,9 +128,9 @@
     
     </div>
     <script>
-        let total = parseInt(getCookie("gpuPrice")) + parseInt(getCookie("totalPrice"));
-        setCookie("totalPrice", total);
-        price.textContent = "$" + getCookie("totalPrice");
+        setCookie("gpuPrice", 0);
+        const price = document.querySelector("#price");
+        price.textContent = "$" + getCookie("totalPrice");  
     </script>
 </body>
 </html>

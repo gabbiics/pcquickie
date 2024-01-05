@@ -59,7 +59,7 @@
             <h2>GPU</h2>
             <div class="image-container">
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","RX_7600"); setCookie("gpuPrice",215.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","RX_7600"); addGpuPrice(215.99); setCookie("gpuPrice",215.99)'>
                         <img src="../Images/amd.png" alt="" class="bestSellingPics">
                         <h3>ASRock AMD Radeon RX 7600 GDDR6 8GB OC Edition </h3>
                         <p><span class="crossedOut">$269.99</span> $215.99</p>
@@ -67,7 +67,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","GTX_1650"); setCookie("gpuPrice",119.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","GTX_1650"); addGpuPrice(119.99); setCookie("gpuPrice",119.99)'>
                         <img src="../Images/GPU/GeForce GTX 1650.png" alt="" class="bestSellingPics">
                         <h3>MSI NVIDIA GeForce GTX 1650 GDDR5 6GB</h3>
                         <p><span class="crossedOut">$149.99</span> $119.99</p>
@@ -75,7 +75,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","GTX_1660_SUPER"); setCookie("gpuPrice",179.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","GTX_1660_SUPER"); addGpuPrice(179.99); setCookie("gpuPrice",179.99)'>
                         <img src="../Images/GPU/GeForce GTX 1660 SUPER.png" alt="" class="bestSellingPics">
                         <h3>MSI NVIDIA GeForce GTX 1660 SUPER GDDR6 6GB</h3>
                         <p><span class="crossedOut">$229.99</span> $179.99</p>
@@ -83,7 +83,7 @@
                     </a>    
                 </div>  
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","GTX_1060"); setCookie("gpuPrice",103.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","GTX_1060"); addGpuPrice(103.99); setCookie("gpuPrice",103.99)'>
                         <img src="../Images/GPU/GeForce GTX 1060.png" alt="" class="bestSellingPics">
                         <h3>GIGABYTE NVIDIA GeForce GTX 1060 GDDR5 6GB </h3>
                         <p><span class="crossedOut">$119.99</span> $103.99</p>
@@ -91,7 +91,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","RTX_2060"); setCookie("gpuPrice",319.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","RTX_2060"); addGpuPrice(319.99); setCookie("gpuPrice",319.99)'>
                         <img src="../Images/GPU/GeForce RTX 2060 SUPER.png" alt="" class="bestSellingPics">
                         <h3>MSI NVIDIA GeForce RTX 2060 SUPER GDDR6 8GB </h3>
                         <p><span class="crossedOut">$399.99</span> $319.99</p>
@@ -99,7 +99,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","RTX_3080"); setCookie("gpuPrice",559.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","RTX_3080"); addGpuPrice(599.99); setCookie("gpuPrice",559.99)'>
                         <img src="../Images/GPU/GeForce RTX 3080.png" alt="" class="bestSellingPics">
                         <h3>ASUS NVIDIA GeForce RTX 3080 GDDR6X 10GB </h3>
                         <p><span class="crossedOut">$699.99</span> $559.99</p>
@@ -107,7 +107,7 @@
                     </a>    
                 </div>
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","RX_6750_XT"); setCookie("gpuPrice",439.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","RX_6750_XT"); addGpuPrice(439.99); setCookie("gpuPrice",439.99)'>
                         <img src="../Images/GPU/AMD Radeon RX 6750 XT.png" alt="" class="bestSellingPics">
                         <h3>GIGABYTE AMD Radeon RX 6750 XT GDDR6 12GB </h3>
                         <p><span class="crossedOut">$549.99</span> $439.99</p>
@@ -115,7 +115,7 @@
                     </a>    
                 </div>     
                 <div class="products">
-                    <a href="ram.html" onclick='setCookie("gpu","RX_7900_XTX"); setCookie("gpuPrice",799.99)'>
+                    <a href="ram.html" onclick='setCookie("gpu","RX_7900_XTX"); addGpuPrice(799.99); setCookie("gpuPrice",799.99)'>
                         <img src="../Images/GPU/AMD Radeon RX 7900 XTX.png" alt="" class="bestSellingPics">
                         <h3>ASRock AMD Radeon RX 7900 XTX GDDR6 24GB </h3>
                         <p><span class="crossedOut">$999.99</span> $799.99</p>
@@ -162,8 +162,12 @@
     
     </div>
     <script>
-        setCookie("totalPrice",getCookie("cpuPrice"));
-        price.textContent = "$" + getCookie("totalPrice");
+        const price = document.querySelector("#price");
+        price.textContent = "$" + getCookie("totalPrice");  
+        let tP = parseInt(getCookie("totalPrice"));
+        let gP = parseInt(getCookie("gpuPriceStored"));
+        let cP = getCookie("cpuPriceStored");
+        let check = tP-gP;
     </script>
 </body>
 </html>
