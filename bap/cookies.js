@@ -1,8 +1,9 @@
 function setCookie(name, value) {
     var date = new Date();
-    date.setTime(date.getTime()+(10*60*1000));
-    var expires = "; expires="+date.toGMTString();
-    document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+    date.setTime(date.getTime() + (10 * 60 * 1000));
+    var expires = "; expires=" + date.toGMTString();
+    var stringValue = String(value);
+    document.cookie = `${name}=${stringValue}; expires=${expires}; path=/`;
 }
 
 function getCookie(name) {
@@ -21,11 +22,11 @@ function getCookie(name) {
 }
 
 function setupCookies(){
+    setCookie("totalPrice",0.00);
     setCookie("cpuPrice",0);
     setCookie("gpuPrice",0);
     setCookie("ramPrice",0);
     setCookie("ssdPrice",0);
-    setCookie("totalPrice",0);
     setCookie("moboPrice",0);
     setCookie("gpuPriceStore",0);
     setCookie("gpuPriceStored",0);
@@ -58,16 +59,16 @@ function checkSocketAMD(mobo){
 function addCpuPrice(cpuPrice) {
     if (cP!=0) {
         let cP = getCookie("cpuPriceStored");
-        let fixedPrice = parseInt(getCookie("totalPrice") || 0) - parseInt(getCookie("cpuPriceStored"));
+        let fixedPrice = parseFloat(getCookie("totalPrice") || 0) - parseFloat(getCookie("cpuPriceStored"));
         setCookie("totalPrice",fixedPrice);
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(cpuPrice);
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(cpuPrice);
         setCookie("totalPrice",finalPrice);
-        setCookie("cpuPriceStored", parseInt(getCookie("cpuPrice")));
+        setCookie("cpuPriceStored", parseFloat(getCookie("cpuPrice")));
         setCookie("cpuPrice", 0);
     } else {
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(cpuPrice);
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(cpuPrice);
         setCookie("totalPrice",finalPrice);
-        setCookie("cpuPriceStored", parseInt(getCookie("cpuPrice")));
+        setCookie("cpuPriceStored", parseFloat(getCookie("cpuPrice")));
         setCookie("cpuPrice", 0);
     }
 }
@@ -76,17 +77,17 @@ function addGpuPrice(gpuPrice) {
     let gP = getCookie("gpuPriceStored");
     if (gP!=0) {
         setCookie("gpuPrice",gpuPrice)
-        let gpuPricing = parseInt(getCookie("gpuPrice"));
-        let fixedPrice = parseInt(getCookie("totalPrice") || 0) - parseInt(getCookie("gpuPriceStored"));
+        let gpuPricing = parseFloat(getCookie("gpuPrice"));
+        let fixedPrice = parseFloat(getCookie("totalPrice") || 0) - parseFloat(getCookie("gpuPriceStored"));
         setCookie("totalPrice",fixedPrice);
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(gpuPrice);
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(gpuPrice);
         setCookie("totalPrice",finalPrice);
         setCookie("gpuPriceStored", gpuPricing);
         setCookie("gpuPrice", 0);
     } else {
         setCookie("gpuPrice",gpuPrice)
-        let gpuPricing = parseInt(getCookie("gpuPrice"));
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(gpuPrice);
+        let gpuPricing = parseFloat(getCookie("gpuPrice"));
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(gpuPrice);
         setCookie("totalPrice", finalPrice);
         setCookie("gpuPriceStored", gpuPricing ); 
     }   
@@ -96,17 +97,17 @@ function addRamPrice(ramPrice) {
     let rP = getCookie("ramPriceStored");
     if (rP!=0) {
         setCookie("ramPrice",ramPrice)
-        let ramPricing = parseInt(getCookie("ramPrice"));
-        let fixedPrice = parseInt(getCookie("totalPrice") || 0) - parseInt(getCookie("ramPriceStored"));
+        let ramPricing = parseFloat(getCookie("ramPrice"));
+        let fixedPrice = parseFloat(getCookie("totalPrice") || 0) - parseFloat(getCookie("ramPriceStored"));
         setCookie("totalPrice",fixedPrice);
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(ramPrice);
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(ramPrice);
         setCookie("totalPrice",finalPrice);
         setCookie("ramPriceStored", ramPricing);
         setCookie("ramPrice", 0);
     } else {
         setCookie("ramPrice",ramPrice)
-        let ramPricing = parseInt(getCookie("ramPrice"));
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(ramPrice);
+        let ramPricing = parseFloat(getCookie("ramPrice"));
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(ramPrice);
         setCookie("totalPrice", finalPrice);
         setCookie("ramPriceStored", ramPricing ); 
     } 
@@ -116,37 +117,37 @@ function addSsdPrice(ssdPrice) {
     let sP = getCookie("ssdPriceStored");
     if (sP!=0) {
         setCookie("ssdPrice",ssdPrice)
-        let ssdPricing = parseInt(getCookie("ssdPrice"));
-        let fixedPrice = parseInt(getCookie("totalPrice") || 0) - parseInt(getCookie("ssdPriceStored"));
+        let ssdPricing = parseFloat(getCookie("ssdPrice"));
+        let fixedPrice = parseFloat(getCookie("totalPrice") || 0) - parseFloat(getCookie("ssdPriceStored"));
         setCookie("totalPrice",fixedPrice);
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(ssdPrice);
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(ssdPrice);
         setCookie("totalPrice",finalPrice);
         setCookie("ssdPriceStored", ssdPricing);
         setCookie("ssdPrice", 0);
     } else {
         setCookie("ssdPrice",ssdPrice)
-        let ssdPricing = parseInt(getCookie("ssdPrice"));
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(ssdPrice);
+        let ssdPricing = parseFloat(getCookie("ssdPrice"));
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(ssdPrice);
         setCookie("totalPrice", finalPrice);
         setCookie("ssdPriceStored", ssdPricing ); 
     } 
 }
 
 function addMoboPrice(moboPrice) {
-    let sP = getCookie("moboPriceStored");
-    if (sP!=0) {
+    let mP = getCookie("moboPriceStored");
+    if (mP!=0) {
         setCookie("mobPrice",moboPrice)
-        let moboPricing = parseInt(getCookie("moboPrice"));
-        let fixedPrice = parseInt(getCookie("totalPrice") || 0) - parseInt(getCookie("moboPriceStored"));
+        let moboPricing = parseFloat(getCookie("moboPrice"));
+        let fixedPrice = parseFloat(getCookie("totalPrice") || 0) - parseFloat(getCookie("moboPriceStored"));
         setCookie("totalPrice",fixedPrice);
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(moboPrice);
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(moboPrice);
         setCookie("totalPrice",finalPrice);
         setCookie("moboPriceStored", moboPricing);
         setCookie("moboPrice", 0);
     } else {
         setCookie("moboPrice",moboPrice)
-        let moboPricing = parseInt(getCookie("moboPrice"));
-        let finalPrice = parseInt(getCookie("totalPrice") || 0) + parseInt(moboPrice);
+        let moboPricing = parseFloat(getCookie("moboPrice"));
+        let finalPrice = parseFloat(getCookie("totalPrice") || 0) + parseFloat(moboPrice);
         setCookie("totalPrice", finalPrice);
         setCookie("moboPriceStored", moboPricing ); 
     } 
