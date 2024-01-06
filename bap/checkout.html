@@ -1,15 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PC Quickie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        
+    </style>
 </head>
+
 <body>
     <script src="cookies.js"></script>
+    
+
+
+
+    <!-- Content -->
+    <div class="container">
+        <div class="orderSummary">
+            <div class="order">
+                <h2>Order summary</h2>
+                <div class="item">
+                    <img src='' alt='' class="cpuOrderImage">
+                    <div class="info">
+                        <h3>CPU</h3>
+                        <h4 class="cpuOrderName">None Selected</h4>
+                        <p class="cpuOrderPrice price">$N/A</p>
+                    </div>
+                </div>	
+                <div class="item">
+                    <img src='' alt='' class="gpuOrderImage">
+                    <div class="info">
+                        <h3>GPU</h3>
+                        <h4 class="gpuOrderName">None Selected</h4>
+                        <p class="gpuOrderPrice price">$N/A</p>
+                    </div>
+                </div>	
+                <div class="item">
+                    <img src='' alt='' class="ramOrderImage">
+                    <div class="info">
+                        <h3>RAM</h3>
+                        <h4 class="ramOrderName">None Selected</h4>
+                        <p class="ramOrderPrice price">$N/A</p>
+                    </div>
+                </div>	
+                <div class="item">
+                    <img src='' alt='' class="ssdOrderImage">
+                    <div class="info">
+                        <h3>SSD</h3>
+                        <h4 class="ssdOrderName">None Selected</h4>
+                        <p class="ssdOrderPrice price">$N/A</p>
+                    </div>
+                </div>	
+                <div class="item">
+                    <img src='' alt='' class="moboOrderImage">
+                    <div class="info">
+                        <h3>MOBO</h3>
+                        <h4 class="moboOrderName">None Selected</h4>
+                        <p class="moboOrderPrice price">$N/A</p>
+                    </div>
+                </div>	
+                <br>
+                <hr>
+                <h3 class="total">TOTAL: $N/A</h3>
+            </div>
+        </div>
+
+        <div class="payment">
+            <div class="paymentContainer">
+                <form action="">
+
+                    <div class="row">
+            
+                        <div class="col">
+            
+                            <h3 class="title">billing address</h3>
+            
+                            <div class="inputBox">
+                                <span>Full Name :</span>
+                                <input type="text" placeholder="Ex: Full Name">
+                            </div>
+                            <div class="inputBox">
+                                <span>Email :</span>
+                                <input type="email" placeholder="example@example.com">
+                            </div>
+                            <div class="inputBox">
+                                <span>Address :</span>
+                                <input type="text" placeholder="Full Address">
+                            </div>
+                            <div class="inputBox">
+                                <span>City :</span>
+                                <input type="text" placeholder="City">
+                            </div>
+            
+                            <div class="flex">
+                                <div class="inputBox">
+                                    <span>State :</span>
+                                    <input type="text" placeholder="Enter State">
+                                </div>
+                                <div class="inputBox">
+                                    <span>ZIP :</span>
+                                    <input type="text" placeholder="0000">
+                                </div>
+                            </div>
+            
+                        </div>
+            
+                        <div class="col">
+            
+                            <h3 class="title">payment</h3>
+            
+                            <div class="inputBox">
+                                <span>Cards Accepted :</span>
+                                <img src="../Images/card_img.png" alt="">
+                            </div>
+                            <div class="inputBox">
+                                <span>Name on Card :</span>
+                                <input type="text" placeholder="Ex: Full Name">
+                            </div>
+                            <div class="inputBox">
+                                <span>Credit Card No. :</span>
+                                <input type="number" placeholder="1111-2222-3333-4444">
+                            </div>
+                            <div class="inputBox">
+                                <span>EXP Month :</span>
+                                <input type="text" placeholder="MM">
+                            </div>
+            
+                            <div class="flex">
+                                <div class="inputBox">
+                                    <span>EXP Year :</span>
+                                    <input type="number" placeholder="YY">
+                                </div>
+                                <div class="inputBox">
+                                    <span>CVV :</span>
+                                    <input type="text" placeholder="1234">
+                                </div>
+                            </div>
+            
+                        </div>
+                
+                    </div>
+            
+                    <input type="submit" value="proceed to checkout" class="submit-btn">
+            
+                </form>
+            </div>
+    </div>      
+
     <script>
-        let total = parseInt(getCookie("moboPrice")) + parseInt(getCookie("totalPrice"));
-        setCookie("totalPrice", total);
+        const cN = getCookie("cpu");    
+        const gN = getCookie("gpu");
+        const rN = getCookie("ram");
+        const sN = getCookie("ssd");
+        const mN = getCookie("mobo");
+        switch(cN){
+            case "i5-12400F":
+                document.querySelector(".cpuOrderImage").src = "../Images/CPU/Core i5-12400F.png";
+                document.querySelector(".cpuOrderName").textContent = "Intel® Core™ i5-12400F Processor(Up to 4.4GHz)";
+                document.querySelector(".cpuOrderPrice").textContent = "$149.99";
+                break;
+            
+            case "i7-14700K":
+                document.querySelector(".cpuOrderImage").src = "../Images/CPU/Core i7-14700K.png";
+                document.querySelector(".cpuOrderName").textContent = "Intel® Core™ i7-14700K Processor(Up to 5.6GHz)";
+                document.querySelector(".cpuOrderPrice").textContent = "$329.99";
+                break;
+
+            case "i9-14900K":
+                document.querySelector(".cpuOrderImage").src = "../Images/CPU/Core i9-14900K.png";
+                document.querySelector(".cpuOrderName").textContent = "Intel® Core™ i9-14900K Processor(Up to 6GHz)";
+                document.querySelector(".cpuOrderPrice").textContent = "$471.99";
+                break;
+            
+            case "R9-5900X":
+                document.querySelector(".cpuOrderImage").src = "../Images/CPU/Ryzen 9 5900X.png";
+                document.querySelector(".cpuOrderName").textContent = "AMD Ryzen™ 9 5900X Processor (Up to 4.8Ghz)";
+                document.querySelector(".cpuOrderPrice").textContent = "$439.99";
+                break;
+
+            case "R9-7950X":
+                document.querySelector(".cpuOrderImage").src = "../Images/CPU/Ryzen 9 7950X.png";
+                document.querySelector(".cpuOrderName").textContent = "AMD Ryzen™ 9 5900X Processor (Up to 5.7Ghz)";
+                document.querySelector(".cpuOrderPrice").textContent = "$559.99";
+                break;
+        }
+
+        switch(gN){
+            case "RX_7600":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/AMD Radeon RX 7600.png";
+                document.querySelector(".gpuOrderName").textContent = "ASRock AMD Radeon RX 7600 GDDR6 8GB OC Edition";
+                document.querySelector(".gpuOrderPrice").textContent = "$215.99";
+                break;
+            
+            case "GTX_1650":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/GeForce GTX 1650.png";
+                document.querySelector(".gpuOrderName").textContent = "MSI NVIDIA GeForce GTX 1650 GDDR5 6GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$119.99";
+                break;
+
+            case "GTX_1660_SUPER":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/GeForce GTX 1660 SUPER.png";
+                document.querySelector(".gpuOrderName").textContent = "MSI NVIDIA GeForce GTX 1660 SUPER GDDR6 6GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$179.99";
+                break;
+            
+            case "GTX_1060":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/GeForce GTX 1060.png";
+                document.querySelector(".gpuOrderName").textContent = "GIGABYTE NVIDIA GeForce GTX 1060 GDDR5 6GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$103.99";
+                break;
+            
+            case "RTX_2060":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/GeForce RTX 2060 SUPER.png";
+                document.querySelector(".gpuOrderName").textContent = "MSI NVIDIA GeForce RTX 2060 SUPER GDDR6 8GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$319.99";
+                break;
+
+            case "RTX_3080":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/GeForce RTX 3080.png";
+                document.querySelector(".gpuOrderName").textContent = "ASUS NVIDIA GeForce RTX 3080 GDDR6X 10GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$559.99";
+                break;
+
+            case "RX_6750_XT":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/AMD Radeon RX 6750 XT.png";
+                document.querySelector(".gpuOrderName").textContent = "GIGABYTE AMD Radeon RX 6750 XT GDDR6 12GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$439.99";
+                break;
+
+            case "RX_7900_XTX":
+                document.querySelector(".gpuOrderImage").src = "../Images/GPU/AMD Radeon RX 7900 XTX.png";
+                document.querySelector(".gpuOrderName").textContent = "ASRock AMD Radeon RX 7900 XTX GDDR6 24GB";
+                document.querySelector(".gpuOrderPrice").textContent = "$799.99";
+                break;
+        }
+        switch(rN){
+            case "AORUS":
+                document.querySelector(".ramOrderImage").src = "../Images/RAM/AORUS DDR4-4800 RGB 16GB.png";
+                document.querySelector(".ramOrderName").textContent = "GIGABYTE AORUS DDR4-4800 RGB 16GB 4800MHz";
+                document.querySelector(".ramOrderPrice").textContent = "$109.99";
+                break;
+            
+            case "LPX_32GB":
+                document.querySelector(".ramOrderImage").src = "../Images/RAM/VENGEANCE® LPX 32 GB.png";
+                document.querySelector(".ramOrderName").textContent = "Corsair VENGEANCE® LPX 32 GB 2666MHz";
+                document.querySelector(".ramOrderPrice").textContent = "$55.99";
+                break;
+
+            case "RGB_16GB":
+                document.querySelector(".ramOrderImage").src = "../Images/RAM/VENGEANCE® RGB RT 16GB.png";
+                document.querySelector(".ramOrderName").textContent = "Corsair VENGEANCE® RGB RT 16GB 3200MHz";
+                document.querySelector(".ramOrderPrice").textContent = "$59.99";
+                break;
+            
+            case "RGB_32GB":
+                document.querySelector(".ramOrderImage").src = "../Images/RAM/VENGEANCE® RGB RT 32GB.png";
+                document.querySelector(".ramOrderName").textContent = "Corsair VENGEANCE® RGB RT 32GB 3200MHz";
+                document.querySelector(".ramOrderPrice").textContent = "$99.99";
+                break;
+        }
+
+        switch(sN){
+            case "Samsung_1TB":
+                document.querySelector(".ssdOrderImage").src = "../Images/SSD/Samsung 870 EVO 1 TB.png";
+                document.querySelector(".ssdOrderName").textContent = 'Samsung 870 EVO 1TB SATA 2.5" Internal Solid State Drive (SSD)';
+                document.querySelector(".ssdOrderPrice").textContent = "$99.99";
+                break;
+
+            case "Kingston_1TB":
+                document.querySelector(".ssdOrderImage").src = "../Images/SSD/Kingston KC3000 1TB.png";
+                document.querySelector(".ssdOrderName").textContent = "Kingston KC3000 PCIe 4.0 NVMe M.2 Solid State Drive (SSD)";
+                document.querySelector(".ssdOrderPrice").textContent = "$139.99";
+                break;
+            
+            case "Crucial_2TB":
+                document.querySelector(".ssdOrderImage").src = "../Images/SSD/Crucial P3 Plus 2TB.png";
+                document.querySelector(".ssdOrderName").textContent = "Crucial P3 Plus 2TB PCIe M.2 2280 Solid State Drive (SSD)";
+                document.querySelector(".ssdOrderPrice").textContent = "$149.99";
+                break;
+
+            case "Crucial_500GB":
+                document.querySelector(".ssdOrderImage").src = "../Images/SSD/Crucial P3 Plus 500GB.png";
+                document.querySelector(".ssdOrderName").textContent = "Crucial P3 Plus 500GB PCIe M.2 2280 Solid State Drive";
+                document.querySelector(".ssdOrderPrice").textContent = "$47.99";
+                break;
+
+            case "WD_256GB":
+                document.querySelector(".ssdOrderImage").src = "../Images/SSD/Western Digital SN740 256 GB.png";
+                document.querySelector(".ssdOrderName").textContent = "Western Digital SN740 256GB 2230 M.2 Solid State Drive (SSD)";
+                document.querySelector(".ssdOrderPrice").textContent = "$19.99";
+                break;   
+
+        }
+
+        switch(mN){
+            case "Z690":
+                document.querySelector(".moboOrderImage").src = "../Images/MOBO/ASRock Z690.png";
+                document.querySelector(".moboOrderName").textContent = 'ASRock Z690 Pro RS LGA 1700 Intel SATA 6Gb/s DDR4';
+                document.querySelector(".moboOrderPrice").textContent = "$129.99";
+                break;
+
+            case "Z790":
+                document.querySelector(".moboOrderImage").src = "../Images/MOBO/GIGABYTE Z790 .png";
+                document.querySelector(".moboOrderName").textContent = 'GIGABYTE Z790 DDR4 LGA 1700 Intel Z790 ATX Motherboard with DDR4';
+                document.querySelector(".moboOrderPrice").textContent = "$179.99";
+                break;
+
+            case "B450M":
+                document.querySelector(".moboOrderImage").src = "../Images/MOBO/Asrock B450M Steel Legend.png";
+                document.querySelector(".moboOrderName").textContent = 'ASRock B450 Steel Legend AM4 AMD Motherboard';
+                document.querySelector(".moboOrderPrice").textContent = "$95.99";
+                break;
+
+            case "A320M-K":
+                document.querySelector(".moboOrderImage").src = "../Images/MOBO/Asus Prime A320M-K.png";
+                document.querySelector(".moboOrderName").textContent = 'ASUS Prime A320M-K AMD Ryzen AM4 Micro-ATX A320';
+                document.querySelector(".moboOrderPrice").textContent = "$115.99";
+                break;
+
+        }
+
+        document.querySelector(".total").textContent = "TOTAL: $" + getCookie("totalPrice");
     </script>
 </body>
 </html>

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	color: #242424;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+	margin:0; padding:0;
+	box-sizing: border-box;
+	outline: none; border:none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+body {
+	overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Set the column widths (1/3 and 2/3) */
+    width: 100%;
+}
+
+.orderSummary{
+	background-color: #D9DDDC;
+	float: none;
+	display: table-cell;
+	vertical-align: middle;
+    grid-column: 1 ;
+}
+
+
+.order {
+    padding-top: 2vh;
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.order h2 {
+	font-size: 1.8em;
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.item {
+	width: 100%;
+	height: auto;
+	background-color: white;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+	margin-bottom: 1%;
+	overflow: hidden;
+	position: relative;
+}
+
+.item:last-of-type {
+	margin-bottom: 0;
+}
+
+.item img {
+	float: left;
+	margin-right: 3%;
+    width: 5vw;
+}
+
+.item .info {
+	padding: 3%;
+}
+
+.info h3{
+    color: gray;
+    font-size: 2vh;
+}
+
+.item .quantity {
+	font-size: 0.8em;
+}
+
+.item .price {
+	background-color: #34495E;
+	position: absolute;
+	padding: 1% 2%;
+	color: white;
+	bottom: 5%;
+	right: 2%;
+}
+
+hr {
+	border-top: 1px solid #A8A8A8;
+}
+
+.ship, .total {
+	margin: 10% 0;
+	text-align: right;
+}
+
+.total {
+	font-size: 1.5em;
+}
+
+
+.payment{
+    grid-column: 2;
+    width: 100%;
+    display: grid;
+}
+
+.paymentContainer{
+    margin: 1vw;
+    background-color: white;
+}
+
+.paymentContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+.paymentContainer form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+}
+
+.paymentContainer form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.paymentContainer form .row .col{
+  flex:1 1 250px;
+}
+
+.paymentContainer form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.paymentContainer form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.paymentContainer form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.paymentContainer form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.paymentContainer form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.paymentContainer form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.paymentContainer form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.paymentContainer form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.paymentContainer form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #34495E;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.paymentContainer form .submit-btn:hover{
+  background: #405a74;
+}
