@@ -184,7 +184,13 @@ body, html {
 
     .products{
         display: grid;
+        transition: transform .4s;
         
+    }
+
+    .products:hover{
+        transform: scale(1.1); 
+        background-color: #D9DDDC;
     }
 
     .products a{
