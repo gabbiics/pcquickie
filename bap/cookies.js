@@ -36,20 +36,38 @@ function setupCookies(){
     setCookie("moboPriceStored",0);
 }
 
-function checkSocketIntel(mobo){
+function checkSocketIntelAndAddMoboPrice(mobo,price){
     let socket = getCookie("cpuSocket");
-    if (socket === "1700"){
+    let cP = getCookie("cpuPriceStore");
+    let mP = getCookie("moboPriceStored");
+    let gP = getCookie("gpuPriceStored");
+    let rP = getCookie("ramPriceStored");
+    let sP = getCookie("ssdPriceStored");
+    if (cP == 0 ||gP == 0 ||rP == 0 ||sP == 0){
+        alert("You skipped a component, The pc is missing a part!")
+        window.location.replace("cpu.html")
+    } else if (socket === "1700"){
         setCookie("mobo",mobo);
+        addMoboPrice(price);
         location.replace("load.html")
     } else {
         alert("Socket not Compatible! Please choose another Motherboard.")
     }
 }
 
-function checkSocketAMD(mobo){
+function checkSocketAMDAndAddMoboPrice(mobo,price){
+    let cP = getCookie("cpuPriceStore");
+    let mP = getCookie("moboPriceStored");
+    let gP = getCookie("gpuPriceStored");
+    let rP = getCookie("ramPriceStored");
+    let sP = getCookie("ssdPriceStored");
     let socket = getCookie("cpuSocket");
-    if (socket === "AM4"){
+    if (cP == 0 ||gP == 0 ||rP == 0 ||sP == 0){
+        alert("You skipped a component, The pc is missing a part!")
+        window.location.replace("cpu.html")
+    } else if (socket === "AM4"){
         setCookie("mobo",mobo);
+        addMoboPrice(price);
         location.replace("load.html")
     } else {
         alert("Socket not Compatible! Please choose another Motherboard.")

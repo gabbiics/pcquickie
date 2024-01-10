@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PC Quickie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Noto+Sans:wght@300;400;500;600;700&family=Oswald&family=Overpass+Mono:wght@300;400;500;600;700&display=swap');
+body, html {
+height: 100%;
+margin: 0;
+background-color: #D9DDDC;
+font-family: "Overpass Mono", sans-serif;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+}  
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.left-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon-container {
+    background-color: #67809f;
+    padding: 5px;
+    margin: 0 5px;
+    display: flex;
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    box-shadow: 0px 0px 10px 0px ;
+}
+
+.icon-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+    color: #34495E;
+    transition: 0.3s ease;
+}
+
+.icon-container a:hover {
+    color: #34495E;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #67809f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+nav ul li {
+    padding: .7vw 2vw;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.1vw;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: "Overpass Mono", sans-serif;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #34495E;
+}
+
+.bg {
+background-image: url("cu.jpg");
+height: 100%;
+background-position: center;
+background-repeat: repeat;
+background-size: cover;
+}
+
+.map-container {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+.map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+footer {
+        background-color: #D9DDDC;
+        padding-top: 20px;
+        font-family: 'Noto Sans', sans-serif;
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footer-section {
+        flex: 1;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .footer-section h4 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #34495E;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        margin-bottom: 5px;
+    }
+
+    ul li a {
+        color: #4B4B4B;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 600;
+    }
+
+    ul li a:hover {
+        color: #34495E;
+    }
+
+    .footer-bottom {
+        background-color: #34495E;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: 500;
+    }
+
+    .combined-section {
+        flex: 1;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .combined-section h4 {
+        font-size: 1em;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .social-icons {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: left;
+        gap: 20px;
+    }
+
+    .social-icons li {
+        display: inline-block;
+    }
+
+    .social-icons li a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: white;
+        color: black;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    .container-1{
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    color: black
+    }
+
+    .img2{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    }
+
+</style>
+</head>
+<body>
+<header class="main-header">
+        <img src="logo.png" alt="" class="logo">
+        <div class="left-icons">
+            <div class="icon-container"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+            <div class="icon-container"><a href="login.html"><i class="fa-solid fa-user"></i></a></div>
+        </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="bap.html">BUILD A PC</a></li>
+            <li><a class="active" href="cs.html">CONTACT US</a></li>
+        </ul>
+    </nav>
+<div class="bg"></div>
+
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.7384528963224!2d120.976!3d14.658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0U0MDAnMjMuMCJOIDcwMMKwNTcnMDQuMiJF!5e0!3m2!1sen!2s!4v1641287895403!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+           
+    <div class="container-1">
+        <p>If you have concern you may contact us here</p>
+    </div>
+    <div class="con2">
+      <ul class="img2">
+      <li><a href="https://www.sti.edu/" target=""><i class="fa-brands fa-google"></i></a></li>
+      <li><a href="tel:+(02) 8294 4001" target=""><i class="fa-solid fa-phone"></i></a></li>
+    </ul>
+    </div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About</h4>
+            <p>Welcome to the Official website of PC Quickie. #QuickLikeFlash</p>
+            <ul class="social-icons">
+                <li><a href="https://web.facebook.com/caloocan.sti.edu" target=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://x.com/STICaloocan?s=20" target=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/sticaloocan?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA==" target=""><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="http://www.youtube.com/@STIdotEdu" target=""><i class="fab fa-youtube"></i></a></li>
+                </li>            
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Headquaters</h4>
+            <p>STI Academic Center, Samson Road corner Caimito Road, Caloocan City, 1400 Metro Manila</p>
+        </div>
+    <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bap.html">Build a PC</a></li>
+                <li><a href="cs.html">Contact Us</a></li>
+               
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
