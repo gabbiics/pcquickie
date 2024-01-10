@@ -203,19 +203,48 @@ footer {
         transition: background-color 0.3s;
     }
 
-    .container-1{
-    font-size: 16px;
-    font-family: 'Arial', sans-serif;
-    color: black
-    }
+    .box {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .img2{
+.box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #34495E;
+}
+  
+  .box ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
+}
+
+.box ul li {
+    margin-bottom: 15px;  
     display: flex;
-    justify-content: left;
-    gap: 20px;
-    }
+    align-items: center; 
+}
+
+.box ul li a {
+    color: #4B4B4B;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 600;
+    display: flex;
+    align-items: center; 
+}
+
+.box ul li i {
+    margin-right: 10px; 
+    color: #67809f;
+}
 
 </style>
 </head>
@@ -238,15 +267,14 @@ footer {
 <div class="map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.7384528963224!2d120.976!3d14.658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM0U0MDAnMjMuMCJOIDcwMMKwNTcnMDQuMiJF!5e0!3m2!1sen!2s!4v1641287895403!5m2!1sen!2s" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
            
-    <div class="container-1">
-        <p>If you have concern you may contact us here</p>
-    </div>
-    <div class="con2">
-      <ul class="img2">
-      <li><a href="https://www.sti.edu/" target=""><i class="fa-brands fa-google"></i></a></li>
-      <li><a href="tel:+(02) 8294 4001" target=""><i class="fa-solid fa-phone"></i></a></li>
+    <div class="box">
+    <h2>Meet us</h2>
+    <ul>
+        <li><a href="https://www.sti.edu/" target=""><i class="fa-solid fa-globe"></i>STI College</a></li>
+        <li><a href="" target=""><i class="fa-solid fa-phone"></i>tel:+(02) 8294 4001</a></li>
+<li><a href="" target=""><i class="fa-solid fa-location-dot"></i>STI Academic Center, Samson Road corner Caimito Road, Caloocan City, 1400 Metro Manila</a></li>
     </ul>
-    </div>
+</div>
 
 <footer>
     <div class="footer-container">
